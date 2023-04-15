@@ -20,10 +20,6 @@ resource "aws_spot_instance_request" "elk" {
     delete = "10m"
   }
 
-}
-
-
-resource "null_resource" "connection" {
   provisioner "remote-exec" {
   connection {
     host = aws_spot_instance_request.elk[*].public_ip
@@ -36,5 +32,6 @@ resource "null_resource" "connection" {
   ]
   
 }
-  
+
 }
+
