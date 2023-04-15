@@ -35,3 +35,24 @@ resource "aws_spot_instance_request" "elk" {
 
 }
 
+
+/* resource "null_resource" "connection" {
+  for_each = var.ansible-practise
+  depends_on = [
+    aws_spot_instance_request.elk[each.key]
+  ]
+  provisioner "remote-exec" {
+  connection {
+    host = aws_spot_instance_request.elk[each.key].public_ip
+    user = "centos"
+    password = "DevOps321"
+  }
+
+  inline = [
+    "sudo labauto ansible"
+  ]
+  
+}
+  
+  
+} */
