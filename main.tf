@@ -19,9 +19,9 @@ resource "aws_spot_instance_request" "elk" {
     create = "10m"
     delete = "10m"
   }
-/* provisioner "remote-exec" {
+provisioner "remote-exec" {
   connection {
-    host = aws_spot_instance_request.elk[each.value["name"]].public_ip
+    host = aws_spot_instance_request.elk[each.key].public_ip
     user = "centos"
     password = "DevOps321"
   }
@@ -30,6 +30,6 @@ resource "aws_spot_instance_request" "elk" {
     "sudo labauto ansible"
   ]
   
-} */
+}
 
 }
