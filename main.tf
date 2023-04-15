@@ -1,3 +1,7 @@
+provider "aws"{
+    region = "us-east-1"
+}
+
 resource "aws_spot_instance_request" "elk" {
     for_each      = var.ansible-practise
     ami           = "ami-0bb6af715826253bf"
