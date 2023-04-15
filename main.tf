@@ -19,7 +19,12 @@ resource "aws_spot_instance_request" "elk" {
     create = "10m"
     delete = "10m"
   }
-provisioner "remote-exec" {
+
+}
+
+
+resource "null_resource" "connection" {
+  provisioner "remote-exec" {
   connection {
     host = aws_spot_instance_request.elk.public_ip
     user = "centos"
@@ -31,5 +36,5 @@ provisioner "remote-exec" {
   ]
   
 }
-
+  
 }
