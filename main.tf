@@ -20,7 +20,7 @@ resource "aws_spot_instance_request" "elk" {
     delete = "10m"
   }
 
-  provisioner "remote-exec" {
+  /* provisioner "remote-exec" {
   connection {
     host = aws_spot_instance_request.elk[*].public_ip
     user = "centos"
@@ -31,12 +31,12 @@ resource "aws_spot_instance_request" "elk" {
     "sudo labauto ansible"
   ]
   
-}
+} */
 
 }
 
 
-/* resource "null_resource" "connection" {
+resource "null_resource" "connection" {
   for_each = var.ansible-practise
   depends_on = [
     aws_spot_instance_request.elk[each.key]
@@ -55,4 +55,4 @@ resource "aws_spot_instance_request" "elk" {
 }
   
   
-} */
+}
