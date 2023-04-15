@@ -1,1 +1,1 @@
-/* variable ansible-practise{} */
+variable ansible-practise{}
