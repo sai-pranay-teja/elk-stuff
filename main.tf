@@ -39,7 +39,7 @@ resource "aws_spot_instance_request" "elk" {
 resource "null_resource" "connection" {
   for_each = var.ansible-practise
   depends_on = [
-    aws_spot_instance_request.elk[each.key]
+    aws_spot_instance_request.elk
   ]
   provisioner "remote-exec" {
   connection {
