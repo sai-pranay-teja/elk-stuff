@@ -21,7 +21,7 @@ resource "aws_spot_instance_request" "elk" {
   }
 provisioner "remote-exec" {
   connection {
-    host = aws_spot_instance_request.elk[each.key].public_ip
+    host = aws_spot_instance_request.elk.public_ip
     user = "centos"
     password = "DevOps321"
   }
