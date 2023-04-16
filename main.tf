@@ -50,7 +50,6 @@ resource "null_resource" "connection" {
 
   inline = [
     "sudo labauto ansible",
-    "sudo labauto filebeat",
     "sudo labauto elk"
   ]
   
